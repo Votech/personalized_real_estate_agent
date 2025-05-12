@@ -2,11 +2,11 @@ import time
 from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
 
-def generate_real_estate_listings(num_properties=10, temperature=1):
+def generate_real_estate_listings(openai_api_key, openai_api_base, num_properties=10, temperature=1):
     # Initialize LangChain's OpenAI LLM with your endpoint
     client = ChatOpenAI(
-        openai_api_base="https://openai.vocareum.com/v1",
-        openai_api_key="voc-558633062126677400528667f8c21cb5ff28.91749773",
+        openai_api_base=openai_api_base,
+        openai_api_key=openai_api_key,
         temperature=temperature,
         model="gpt-3.5-turbo",
         frequency_penalty=0.7,
